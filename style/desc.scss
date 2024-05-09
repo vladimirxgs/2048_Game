@@ -1,0 +1,26 @@
+.desc {
+  display: flex;
+  padding: 0 42px;
+  align-items: center;
+
+  p {
+    font-size: 15px;
+    color: #635545;
+    flex: 1;
+  }
+
+  button {
+    margin: 0;
+    padding: 0;
+    width: 98px;
+    height: 44px;
+    border-radius: 4px;
+    background-color: #8f7a66;
+    font-size: 14px;
+    color: #fff;
+    line-height: 44px;
+    text-align: center;
+    font-weight: 700;
+    font-family: Arial-Black;
+  }
+}

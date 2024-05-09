@@ -1,0 +1,322 @@
+p {
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+}
+button:focus {
+  outline: none;
+}
+
+nav {
+  height: 68px;
+  padding: 30px 42px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav h1 {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 700px;
+  color: #635545;
+}
+nav .score {
+  display: flex;
+}
+nav .score > div {
+  width: 68px;
+  height: 68px;
+  margin-left: 10px;
+  border-radius: 6px;
+  background-color: #bbada0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+nav .score > div .label {
+  font-size: 15px;
+  font-weight: bold;
+  color: #eee4d9;
+}
+nav .score > div .value {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.desc {
+  display: flex;
+  padding: 0 42px;
+  align-items: center;
+}
+.desc p {
+  font-size: 15px;
+  color: #635545;
+  flex: 1;
+}
+.desc button {
+  margin: 0;
+  padding: 0;
+  width: 98px;
+  height: 44px;
+  border-radius: 4px;
+  background-color: #8f7a66;
+  font-size: 14px;
+  color: #fff;
+  line-height: 44px;
+  text-align: center;
+  font-weight: 700;
+  font-family: Arial-Black;
+}
+
+main {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  width: 290px;
+  height: 290px;
+  position: relative;
+  padding: 10px;
+  background: #bbada0;
+  border-radius: 8px;
+}
+main .game-grid .grid-row {
+  margin-bottom: 10px;
+  display: flex;
+}
+main .game-grid .grid-row .grid-cell {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+  float: left;
+  border-radius: 3px;
+  background: rgba(238, 228, 218, 0.35);
+}
+main .game-grid .grid-row .grid-cell:last-child {
+  margin-right: 0;
+}
+main .game-grid .grid-row:last-child {
+  margin-bottom: 0;
+}
+main .tile-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+main .tile-container .tile {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 4px;
+  transition: transform 100ms ease-in-out;
+}
+main .tile-container .tile-inner {
+  width: 100%;
+  height: 100%;
+  line-height: 60px;
+  background: #eee4da;
+  text-align: center;
+  font-weight: bold;
+  font-size: 34px;
+  color: #776e65;
+}
+main .tile-container .tile-position-1-1 {
+  transform: translate(10px, 10px);
+}
+main .tile-container .tile-position-1-2 {
+  transform: translate(80px, 10px);
+}
+main .tile-container .tile-position-1-3 {
+  transform: translate(150px, 10px);
+}
+main .tile-container .tile-position-1-4 {
+  transform: translate(220px, 10px);
+}
+main .tile-container .tile-position-2-1 {
+  transform: translate(10px, 80px);
+}
+main .tile-container .tile-position-2-2 {
+  transform: translate(80px, 80px);
+}
+main .tile-container .tile-position-2-3 {
+  transform: translate(150px, 80px);
+}
+main .tile-container .tile-position-2-4 {
+  transform: translate(220px, 80px);
+}
+main .tile-container .tile-position-3-1 {
+  transform: translate(10px, 150px);
+}
+main .tile-container .tile-position-3-2 {
+  transform: translate(80px, 150px);
+}
+main .tile-container .tile-position-3-3 {
+  transform: translate(150px, 150px);
+}
+main .tile-container .tile-position-3-4 {
+  transform: translate(220px, 150px);
+}
+main .tile-container .tile-position-4-1 {
+  transform: translate(10px, 220px);
+}
+main .tile-container .tile-position-4-2 {
+  transform: translate(80px, 220px);
+}
+main .tile-container .tile-position-4-3 {
+  transform: translate(150px, 220px);
+}
+main .tile-container .tile-position-4-4 {
+  transform: translate(220px, 220px);
+}
+main .tile-container .tile-merged .tile-inner {
+  z-index: 20;
+  animation: pop 200ms ease 100ms;
+  animation-fill-mode: backwards;
+}
+main .tile-container .tile-new .tile-inner {
+  animation: appear 200ms ease-in-out;
+  animation-delay: 100ms;
+  animation-fill-mode: backwards;
+}
+main .tile-container .tile.tile-2 .tile-inner {
+  background: #eee4da;
+}
+main .tile-container .tile.tile-4 .tile-inner {
+  background: #ede0c8;
+}
+main .tile-container .tile.tile-8 .tile-inner {
+  color: #f9f6f2;
+  background: #f2b179;
+}
+main .tile-container .tile.tile-16 .tile-inner {
+  color: #f9f6f2;
+  background: #f59563;
+}
+main .tile-container .tile.tile-32 .tile-inner {
+  color: #f9f6f2;
+  background: #f67c5f;
+}
+main .tile-container .tile.tile-64 .tile-inner {
+  color: #f9f6f2;
+  background: #f65e3b;
+}
+main .tile-container .tile.tile-128 .tile-inner {
+  color: #f9f6f2;
+  background: #edcf72;
+  font-size: 30px;
+}
+main .tile-container .tile.tile-256 .tile-inner {
+  color: #f9f6f2;
+  background: #edcc61;
+  font-size: 30px;
+}
+main .tile-container .tile.tile-512 .tile-inner {
+  color: #f9f6f2;
+  background: #edc850;
+  font-size: 30px;
+}
+main .tile-container .tile.tile-1024 .tile-inner {
+  color: #f9f6f2;
+  background: #edc53f;
+  font-size: 22px;
+}
+main .tile-container .tile.tile-2048 .tile-inner {
+  color: #f9f6f2;
+  background: #edc22e;
+  font-size: 22px;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes pop {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.body {
+  margin: 0;
+  padding: 0;
+  font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+  color: #776e65;
+}
+
+.container {
+  position: relative;
+  width: 375px;
+  height: 667px;
+  position: fixed;
+  background-color: #faf8ef;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-top: 78px;
+}
+footer img {
+  width: 100px;
+  height: 36px;
+}
+footer span {
+  margin-left: 16px;
+  font-size: 14px;
+  color: #8f7a67;
+  font-weight: 500;
+}
+
+.mask {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.mask .content {
+  font-family: Arial-Black;
+  font-size: 26px;
+  color: #8f7a67;
+  text-align: center;
+}
+.mask button {
+  margin-top: 20px;
+  width: 98px;
+  height: 44px;
+  background: #8f7a67;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #ffffff;
+  text-align: center;
+  font-family: Arial-Black;
+  font-weight: 700;
+  line-height: 44px;
+}
+
+/*# sourceMappingURL=index.css.map */
